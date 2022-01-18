@@ -13,6 +13,7 @@ exports.getPictures = async (req, res) => {
 
       if (imgData.data.photos.total > 0) {
         imgData.data.photos.photo.map(item => {
+          item.url = `https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}.jpg`
           delete item.id;
           delete item.owner;
           delete item.secret;
