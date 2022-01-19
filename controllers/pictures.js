@@ -50,7 +50,9 @@ exports.getPictures = async (req, res) => {
     console.error("[Getting Images] Error: ", error.toString());
     res.status(500).json({
       code: 500,
-      message: "Internal Server Error"
+      message: error.toString()
     });
   }
 };
+
+//! MOCHA DOES NOT DETECT PROCESS ENV !!!
